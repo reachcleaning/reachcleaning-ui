@@ -6,6 +6,10 @@ import logo from '../Assests/img/logo.jpeg';
 import IconButton from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import {ABOUTUS, SERVICES, MOTTO} from '../constants/CONSTANT';
+import * as Scroll from 'react-scroll';
+import { FilterNone } from '@material-ui/icons';
+
+const ScrollLink = Scroll.Link;
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -35,6 +39,9 @@ const useStyles = makeStyles(() => ({
     color: '#fff',
     background: 'rgba(194,166,97, 0.4)'
   },
+  nav_link: {
+    textDecoration: 'none'
+  },
   motto: {
     color: '#C2A661',
     fontStyle: 'oblique',
@@ -57,8 +64,24 @@ export default () => {
             </IconButton>
             <div className={classes.navbar_right}>
               <div className={classes.nav_buttons_block}>
-                <Button size="large" className={classes.nav_button}>{ABOUTUS}</Button>
-                <Button size="large" className={classes.nav_button}>{SERVICES}</Button>
+                <ScrollLink 
+                  to="aboutus" 
+                  spy={true} 
+                  smooth={true} 
+                  duration={500} 
+                  className={classes.nav_link}
+                >
+                  <Button size="large" className={classes.nav_button}>{ABOUTUS}</Button>
+                </ScrollLink>
+                <ScrollLink 
+                  to="services" 
+                  spy={true} 
+                  smooth={true} 
+                  duration={500} 
+                  className={classes.nav_link}
+                >
+                  <Button size="large" className={classes.nav_button}>{SERVICES}</Button>
+                </ScrollLink>
               </div>
               <div className={classes.motto}>{MOTTO}</div>
             </div>

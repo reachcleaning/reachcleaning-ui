@@ -11,6 +11,7 @@ import {
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import { Element } from 'react-scroll'
 
 const useStyles = makeStyles(() => ({
     post_container: {
@@ -22,7 +23,7 @@ const useStyles = makeStyles(() => ({
         marginBottom: '20px'
     },
     post_content: {
-        flex: 0.9,
+        flex: 1,
     },
     post_title: {
         fontSize: '40px',
@@ -54,9 +55,11 @@ const AboutUs = () => {
     return (
         <div className={classes.post_container}>
             <div className={classes.post_content}>
-                <div className={classes.post_title}>{ABOUTUS}</div>
-                <p className={classes.message}>{ABOUTUS_MESSAGE_P1}</p>
-                <p className={classes.message}>{ABOUTUS_MESSAGE_P2}</p>
+                <Element id='aboutus' name='aboutus'>
+                    <div className={classes.post_title}>{ABOUTUS}</div>
+                    <p className={classes.message}>{ABOUTUS_MESSAGE_P1}</p>
+                    <p className={classes.message}>{ABOUTUS_MESSAGE_P2}</p>
+                </Element>
             </div>
         </div>
     );
@@ -81,42 +84,44 @@ const Services = () => {
     return (
         <div className={classes.post_container}>
             <div className={classes.post_content}>
-                <div className={classes.post_title}>{SERVICE_TITLE}</div>
-                <p className={classes.message}>{SERVICE_MESSAGE}</p>
-                <Accordion defaultActiveKey="0">
-                    <Card>
-                        <Card.Header>
-                            <Accordion.Toggle as={Button} variant="link" eventKey="0">{CLINICAL_SERVICE_TITLE}</Accordion.Toggle>
-                        </Card.Header>
-                        <Accordion.Collapse eventKey="0">
-                            <Card.Body>{CLINICAL_SERVICE_MESSAGE}</Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
-                    <Card>
-                        <Card.Header>
-                            <Accordion.Toggle as={Button} variant="link" eventKey="1">{PERIODIC_SERVICE_TITLE}</Accordion.Toggle>
-                        </Card.Header>
-                        <Accordion.Collapse eventKey="1">
-                            <Card.Body>{PERIODIC_SERVICE_MESSAGE}</Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
-                    <Card>
-                        <Card.Header>
-                            <Accordion.Toggle as={Button} variant="link" eventKey="2">{DEEP_SERVICE_TITLE}</Accordion.Toggle>
-                        </Card.Header>
-                        <Accordion.Collapse eventKey="2">
-                            <Card.Body>{DEEP_SERVICE_MESSAGE}</Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
-                    <Card>
-                        <Card.Header>
-                            <Accordion.Toggle as={Button} variant="link" eventKey="3">{WALL_SERVICE_TITLE}</Accordion.Toggle>
-                        </Card.Header>
-                        <Accordion.Collapse eventKey="3">
-                            <Card.Body>{WALL_SERVICE_MESSAGE}</Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
-                </Accordion>
+                <Element id='services' name='services'>
+                    <div className={classes.post_title}>{SERVICE_TITLE}</div>
+                    <p className={classes.message}>{SERVICE_MESSAGE}</p>
+                    <Accordion defaultActiveKey="0">
+                        <Card>
+                            <Card.Header>
+                                <Accordion.Toggle as={Button} variant="link" eventKey="0">{CLINICAL_SERVICE_TITLE}</Accordion.Toggle>
+                            </Card.Header>
+                            <Accordion.Collapse eventKey="0">
+                                <Card.Body>{CLINICAL_SERVICE_MESSAGE}</Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        <Card>
+                            <Card.Header>
+                                <Accordion.Toggle as={Button} variant="link" eventKey="1">{PERIODIC_SERVICE_TITLE}</Accordion.Toggle>
+                            </Card.Header>
+                            <Accordion.Collapse eventKey="1">
+                                <Card.Body>{PERIODIC_SERVICE_MESSAGE}</Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        <Card>
+                            <Card.Header>
+                                <Accordion.Toggle as={Button} variant="link" eventKey="2">{DEEP_SERVICE_TITLE}</Accordion.Toggle>
+                            </Card.Header>
+                            <Accordion.Collapse eventKey="2">
+                                <Card.Body>{DEEP_SERVICE_MESSAGE}</Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        <Card>
+                            <Card.Header>
+                                <Accordion.Toggle as={Button} variant="link" eventKey="3">{WALL_SERVICE_TITLE}</Accordion.Toggle>
+                            </Card.Header>
+                            <Accordion.Collapse eventKey="3">
+                                <Card.Body>{WALL_SERVICE_MESSAGE}</Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                    </Accordion>
+                </Element>
             </div>
         </div>
     );
