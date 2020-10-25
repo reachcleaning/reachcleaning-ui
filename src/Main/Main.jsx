@@ -10,8 +10,12 @@ import {
 } from '../constants/CONSTANT';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import { Element } from 'react-scroll'
+import CardDeck from 'react-bootstrap/CardDeck';
+import { Element } from 'react-scroll';
+import ClinicalService from '../Assests/img/ClinicalService.png';
+import PeriodicCleaning from '../Assests/img/PeriodicCleaning.jpg';
+import DeepCleaning from '../Assests/img/DeepCleaning.jpeg';
+import WallCleaning from '../Assests/img/WallCleaning.jpg';
 
 const useStyles = makeStyles(() => ({
     post_container: {
@@ -29,9 +33,20 @@ const useStyles = makeStyles(() => ({
         fontSize: '40px',
         fontWeight: 100,
         lineHeight: 1.65,
+        textAlign: "center"
     },
     message: {
-        fontWeight: 100
+        fontWeight: 100,
+        textAlign: "center"
+    },
+    service_cards_height: {
+        height: "fit-content",
+        transition: 'transform 1s',
+        marginBottom: '3rem !important',
+        "&:hover": {
+            cursor: "pointer",
+            transform: "scale(1.1)"
+        }
     }
 }));
 
@@ -84,44 +99,53 @@ const Services = () => {
     return (
         <div className={classes.post_container}>
             <div className={classes.post_content}>
-                <Element id='services' name='services'>
-                    <div className={classes.post_title}>{SERVICE_TITLE}</div>
-                    <p className={classes.message}>{SERVICE_MESSAGE}</p>
-                    <Accordion defaultActiveKey="0">
-                        <Card>
-                            <Card.Header>
-                                <Accordion.Toggle as={Button} variant="link" eventKey="0">{CLINICAL_SERVICE_TITLE}</Accordion.Toggle>
-                            </Card.Header>
-                            <Accordion.Collapse eventKey="0">
-                                <Card.Body>{CLINICAL_SERVICE_MESSAGE}</Card.Body>
-                            </Accordion.Collapse>
-                        </Card>
-                        <Card>
-                            <Card.Header>
-                                <Accordion.Toggle as={Button} variant="link" eventKey="1">{PERIODIC_SERVICE_TITLE}</Accordion.Toggle>
-                            </Card.Header>
-                            <Accordion.Collapse eventKey="1">
-                                <Card.Body>{PERIODIC_SERVICE_MESSAGE}</Card.Body>
-                            </Accordion.Collapse>
-                        </Card>
-                        <Card>
-                            <Card.Header>
-                                <Accordion.Toggle as={Button} variant="link" eventKey="2">{DEEP_SERVICE_TITLE}</Accordion.Toggle>
-                            </Card.Header>
-                            <Accordion.Collapse eventKey="2">
-                                <Card.Body>{DEEP_SERVICE_MESSAGE}</Card.Body>
-                            </Accordion.Collapse>
-                        </Card>
-                        <Card>
-                            <Card.Header>
-                                <Accordion.Toggle as={Button} variant="link" eventKey="3">{WALL_SERVICE_TITLE}</Accordion.Toggle>
-                            </Card.Header>
-                            <Accordion.Collapse eventKey="3">
-                                <Card.Body>{WALL_SERVICE_MESSAGE}</Card.Body>
-                            </Accordion.Collapse>
-                        </Card>
-                    </Accordion>
-                </Element>
+                <div className={classes.post_title}>{SERVICE_TITLE}</div>
+                <CardDeck className="mt-5">
+                    <Card className={classes.service_cards_height}>
+                        <Card.Img variant="top" src={ClinicalService} />
+                        <Accordion>
+                            <Card className="m-0">
+                                <Accordion.Toggle as={Card.Header} eventKey="0" style={{cursor:"pointer"}}>{CLINICAL_SERVICE_TITLE}</Accordion.Toggle>
+                                <Accordion.Collapse eventKey="0">
+                                    <Card.Body>{CLINICAL_SERVICE_MESSAGE}</Card.Body>
+                                </Accordion.Collapse>
+                            </Card>
+                        </Accordion>
+                    </Card>
+                    <Card className={classes.service_cards_height}>
+                        <Card.Img variant="top" src={PeriodicCleaning} />
+                        <Accordion>
+                            <Card className="m-0">
+                                <Accordion.Toggle as={Card.Header} eventKey="0" style={{cursor:"pointer"}}>{PERIODIC_SERVICE_TITLE}</Accordion.Toggle>
+                                <Accordion.Collapse eventKey="0">
+                                    <Card.Body>{PERIODIC_SERVICE_MESSAGE}</Card.Body>
+                                </Accordion.Collapse>
+                            </Card>
+                        </Accordion>
+                    </Card>
+                    <Card className={classes.service_cards_height}>
+                        <Card.Img variant="top" src={DeepCleaning} />
+                        <Accordion>
+                            <Card className="m-0">
+                                <Accordion.Toggle as={Card.Header} eventKey="0" style={{cursor:"pointer"}}>{DEEP_SERVICE_TITLE}</Accordion.Toggle>
+                                <Accordion.Collapse eventKey="0">
+                                    <Card.Body>{DEEP_SERVICE_MESSAGE}</Card.Body>
+                                </Accordion.Collapse>
+                            </Card>
+                        </Accordion>
+                    </Card>
+                    <Card className={classes.service_cards_height}>
+                        <Card.Img variant="top" src={WallCleaning} />
+                        <Accordion>
+                            <Card className="m-0">
+                                <Accordion.Toggle as={Card.Header} eventKey="0" style={{cursor:"pointer"}}>{WALL_SERVICE_TITLE}</Accordion.Toggle>
+                                <Accordion.Collapse eventKey="0">
+                                    <Card.Body>{WALL_SERVICE_MESSAGE}</Card.Body>
+                                </Accordion.Collapse>
+                            </Card>
+                        </Accordion>
+                    </Card>
+                </CardDeck>
             </div>
         </div>
     );
@@ -130,9 +154,9 @@ const Services = () => {
 const Main = () => {
     return (<div>
         <WelcomeInfo />
+        <Services />
         <AboutUs />
         <Serve />
-        <Services />
         <p>
             <i>{CONTACT_US_MESSAGE}</i>
             <a href={"mailto:" + RC_MAIL}>{RC_MAIL}</a>
