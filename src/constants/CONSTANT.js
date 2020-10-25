@@ -37,3 +37,4 @@ export const NAME = "Name";
 export const EMAIL = "Email";
 export const MESSAGE = "Message";
 export const SUBMIT = "Submit";
+export const PHONENO = "Phone No"

@@ -3,18 +3,17 @@ import { makeStyles } from '@material-ui/core/styles';
 import {
     WELCOME, WELCOME_MESSAGE, ABOUTUS, ABOUTUS_MESSAGE_P1, ABOUTUS_MESSAGE_P2,
     SERVE_TITLE, SERVE_MESSAGE_P1, SERVE_MESSAGE_P2,
-    SERVICE_TITLE, SERVICE_MESSAGE, CLINICAL_SERVICE_TITLE,
+    SERVICE_TITLE, CLINICAL_SERVICE_TITLE,
     CLINICAL_SERVICE_MESSAGE, PERIODIC_SERVICE_TITLE, PERIODIC_SERVICE_MESSAGE,
-    DEEP_SERVICE_MESSAGE, DEEP_SERVICE_TITLE, WALL_SERVICE_MESSAGE, WALL_SERVICE_TITLE,
-    CONTACT_US_MESSAGE, RC_MAIL
+    DEEP_SERVICE_MESSAGE, DEEP_SERVICE_TITLE, WALL_SERVICE_MESSAGE, WALL_SERVICE_TITLE
 } from '../constants/CONSTANT';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
 import { Element } from 'react-scroll';
 import ClinicalService from '../Assests/img/ClinicalService.png';
-import PeriodicCleaning from '../Assests/img/PeriodicCleaning.jpg';
-import DeepCleaning from '../Assests/img/DeepCleaning.jpeg';
+import PeriodicCleaning from '../Assests/img/PeriodicCleaning.jpeg';
+import DeepCleaning from '../Assests/img/DeepCleaning.jpg';
 import WallCleaning from '../Assests/img/WallCleaning.jpg';
 
 const useStyles = makeStyles(() => ({
@@ -157,10 +156,6 @@ const Main = () => {
         <Services />
         <AboutUs />
         <Serve />
-        <p>
-            <i>{CONTACT_US_MESSAGE}</i>
-            <a href={"mailto:" + RC_MAIL}>{RC_MAIL}</a>
-        </p>
     </div>)
 }
 

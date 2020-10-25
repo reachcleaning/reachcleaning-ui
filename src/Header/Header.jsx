@@ -60,7 +60,9 @@ export default () => {
         <AppBar position="static" className={classes.header}>
           <Toolbar className={classes.toolbar}>
             <IconButton className={classes.icon_button}>
-              <img src={logo} alt="logo.jpeg" width="200" height="200"/>
+              <Link to="/" className={classes.nav_link}>
+                <img src={logo} alt="logo.jpeg" width="200" height="200"/>
+              </Link>
             </IconButton>
             <div className={classes.navbar_right}>
               <div className={classes.nav_buttons_block}>
