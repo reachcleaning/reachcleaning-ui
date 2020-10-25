@@ -17,3 +17,8 @@ code {
 a:hover {
   text-decoration: none !important;
 }
+
+label:after {
+  content:" *";
+  color: red;
+}
