@@ -5,9 +5,9 @@ import Toolbar from '@material-ui/core/Toolbar';
 import logo from '../Assests/img/logo.jpeg';
 import IconButton from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
-import {ABOUTUS, SERVICES, MOTTO} from '../constants/CONSTANT';
+import {ABOUTUS, CONTACT, MOTTO} from '../constants/CONSTANT';
 import * as Scroll from 'react-scroll';
-import { FilterNone } from '@material-ui/icons';
+import {Link} from 'react-router-dom';
 
 const ScrollLink = Scroll.Link;
 
@@ -71,17 +71,13 @@ export default () => {
                   duration={500} 
                   className={classes.nav_link}
                 >
-                  <Button size="large" className={classes.nav_button}>{ABOUTUS}</Button>
+                  <Link to="/#aboutus" className={classes.nav_link}>
+                    <Button size="large" className={classes.nav_button}>{ABOUTUS}</Button>
+                  </Link>
                 </ScrollLink>
-                <ScrollLink 
-                  to="services" 
-                  spy={true} 
-                  smooth={true} 
-                  duration={500} 
-                  className={classes.nav_link}
-                >
-                  <Button size="large" className={classes.nav_button}>{SERVICES}</Button>
-                </ScrollLink>
+                <Link to="/contact" className={classes.nav_link}>
+                  <Button size="large" className={classes.nav_button}>{CONTACT}</Button>
+                </Link>
               </div>
               <div className={classes.motto}>{MOTTO}</div>
             </div>

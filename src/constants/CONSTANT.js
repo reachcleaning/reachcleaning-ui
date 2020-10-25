@@ -1,5 +1,6 @@
 export const ABOUTUS = "About US";
 export const SERVICES = "Services";
+export const CONTACT = "Contact";
 export const MOTTO = `Reach Cleaning Services aims to exceed your commercial cleaning expectations!
 We are proud to be your cleaning partner.`;
 export const WELCOME = "Welcome to RCS";
@@ -32,3 +33,7 @@ export const WALL_SERVICE_MESSAGE = `To give your wall a fresh look without a pa
 to you at a quality similar to a paint brush but at the fraction of the cost.`;
 export const CONTACT_US_MESSAGE = `Contact us today for a quote `;
 export const RC_MAIL = 'contact@reachcleaning.co.uk';
+export const NAME = "Name";
+export const EMAIL = "Email";
+export const MESSAGE = "Message";
+export const SUBMIT = "Submit";
