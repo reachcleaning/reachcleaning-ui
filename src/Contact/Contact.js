@@ -1,16 +1,20 @@
 import React, {useRef, useState} from 'react';
-import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import * as emailjs from 'emailjs-com';
-import {NAME, EMAIL, MESSAGE, PHONENO, SUBMIT} from '../constants/CONSTANT';
+import {FIRST_NAME, LAST_NAME, MIDDLE_NAME,
+    EMAIL, MESSAGE, PHONENO, SUBMIT,
+    CONTACT_US_TODAY
+} from '../constants/CONSTANT';
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default () => {
 
-    const [Name, setName] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [middleName, setMiddleName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [Email, setEmail] = useState('');
     const [Message, setMessage] = useState('');
     const [PhoneNo, setPhoneNo] = useState('');
@@ -23,20 +27,35 @@ export default () => {
     const handleSubmit = () => {
         setSuccessMessage('');
         setErrorMessage('');
+
+        const Name = middleName ? firstName + " " + lastName : firstName + " " + middleName + " " + lastName;
+        
+        if(!firstName || !lastName ) {
+            setErrorMessage('First Name and Last Name are Required');
+            setSuccessMessage('');
+            return;
+        }
+
         if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(Email)) {
             setErrorMessage('Invalid Email Address');
             setSuccessMessage('');
             return;
         }
 
-        if(!Message || !Name || !PhoneNo) {
-            setErrorMessage('All Fields are required');
+        if(!PhoneNo) {
+            setErrorMessage('Phone No is Required');
+            setSuccessMessage('');
+            return;
+        }
+
+        if(!Message) {
+            setErrorMessage('Message is Required');
             setSuccessMessage('');
             return;
         }
 
         if(!Captcha) {
-            setErrorMessage('Captcha verification is required');
+            setErrorMessage('Captcha Verification is Required');
             setSuccessMessage('');
             return;
         }
@@ -57,10 +76,11 @@ export default () => {
         )
         .then(e => {
             setSuccessMessage('Thank you for contacting us. We will get back to you soon');
-            setName('');
+            setFirstName('');
             setEmail('');
             setMessage('');
-            setName('');
+            setLastName('');
+            setMiddleName('');
             setPhoneNo("");
             setCaptcha(null);
         })
@@ -75,9 +95,9 @@ export default () => {
 
     return (
         <React.Fragment>
-            <div className="mt-5 w-100">
-                <Container className="justify-content-center">
-                    <Jumbotron className="col-md-6 offset-md-3 col-sm-12">
+            <div className="mt-5">
+                <div className="m-5 row">
+                    <Jumbotron className="col-md-7 col-sm-12">
                         { ErrorMessage && 
                             <Alert variant="danger" onClose={() => setErrorMessage(false)} dismissible>
                                 <Alert.Heading>{ErrorMessage}</Alert.Heading>
@@ -89,34 +109,54 @@ export default () => {
                             </Alert>
                         }
                         <Form>
-                            <Form.Group controlId="formName">
-                                <Form.Label>{NAME}</Form.Label>
-                                <Form.Control type="text" placeholder="Enter Name" value={Name} onChange={e => {
-                                        e.persist();
-                                        setName(e.target.value);
-                                    }
-                                }/>
-                            </Form.Group>
-                            <Form.Group controlId="formEmail">
-                                <Form.Label>{EMAIL}</Form.Label>
-                                <Form.Control type="email" placeholder="Enter email" value={Email} onChange={e => {
-                                        e.persist();
-                                        setEmail(e.target.value);
-                                    }
-                                }/>
-                            </Form.Group>
-                            <Form.Group controlId="formPhoneNo">
-                                <Form.Label>{PHONENO}</Form.Label>
-                                <Form.Control type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" value={PhoneNo} placeholder="123-45-678" onChange={e => {
-                                        e.persist();
-                                        setPhoneNo(e.target.value);
-                                    }
-                                }/>
-                                <Form.Text className="text-muted">
-                                </Form.Text>
-                            </Form.Group>
+                            <Form.Row>
+                                <Form.Group controlId="formFirstName" className="col-md-4">
+                                    <Form.Label className="required">{FIRST_NAME}</Form.Label>
+                                    <Form.Control type="text" placeholder="Enter First Name" value={firstName} onChange={e => {
+                                            e.persist();
+                                            setFirstName(e.target.value);
+                                        }
+                                    }/>
+                                </Form.Group>
+                                <Form.Group controlId="formMiddleName" className="col-md-4">
+                                    <Form.Label>{MIDDLE_NAME}</Form.Label>
+                                    <Form.Control type="text" placeholder="Enter Middle Name" value={middleName} onChange={e => {
+                                            e.persist();
+                                            setMiddleName(e.target.value);
+                                        }
+                                    }/>
+                                </Form.Group>
+                                <Form.Group controlId="formLastName" className="col-md-4">
+                                    <Form.Label className="required">{LAST_NAME}</Form.Label>
+                                    <Form.Control type="text" placeholder="Enter Last Name" value={lastName} onChange={e => {
+                                            e.persist();
+                                            setLastName(e.target.value);
+                                        }
+                                    }/>
+                                </Form.Group>
+                            </Form.Row>
+                            <Form.Row>
+                                <Form.Group className="col-md-6" controlId="formEmail">
+                                    <Form.Label className="required">{EMAIL}</Form.Label>
+                                    <Form.Control type="email" placeholder="Enter email" value={Email} onChange={e => {
+                                            e.persist();
+                                            setEmail(e.target.value);
+                                        }
+                                    }/>
+                                </Form.Group>
+                                <Form.Group className="col-md-6" controlId="formPhoneNo">
+                                    <Form.Label className="required">{PHONENO}</Form.Label>
+                                    <Form.Control type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" value={PhoneNo} placeholder="+44-7911-123456" onChange={e => {
+                                            e.persist();
+                                            setPhoneNo(e.target.value);
+                                        }
+                                    }/>
+                                    <Form.Text className="text-muted">
+                                    </Form.Text>
+                                </Form.Group>
+                            </Form.Row>
                             <Form.Group controlId="formMessage">
-                                <Form.Label>{MESSAGE}</Form.Label>
+                                <Form.Label className="required">{MESSAGE}</Form.Label>
                                 <Form.Control placeholder="Enter your message" as="textarea" value={Message} rows={3} onChange={e => {
                                     e.persist();
                                     setMessage(e.target.value);
@@ -130,7 +170,11 @@ export default () => {
                             <Button className="mt-5" variant="primary" type="button" onClick={handleSubmit}>{SUBMIT}</Button>
                         </Form>
                     </Jumbotron>
-                </Container>
+                    <Jumbotron className="col-md-5 col-sm-12">
+                            <h4 className="display-6">{CONTACT_US_TODAY}</h4>
+                            <p>Phone No: 03300430142</p>
+                    </Jumbotron>
+                </div>
             </div>
         </React.Fragment>
     );

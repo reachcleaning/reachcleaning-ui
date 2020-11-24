@@ -7,7 +7,9 @@ import {
 import Home from './Home/Home';
 import Header from './Header/Header';
 import Contact from './Contact/Contact';
-
+import ClinicalCleaning from './ClinicalCleaning/ClinicalCleaning';
+import DeepCleaning from './DeepCleaning/DeepCleaning';
+import OfficeCleaning from './OfficeCleaning/OfficeCleaning';
 
 function App() {
   return (
@@ -19,6 +21,18 @@ function App() {
         </Route>
         <Route exact path="/contact">
           <Contact />
+        </Route>
+        <Route exact path="/ClinicalCleaning">
+          <ClinicalCleaning />
+        </Route>
+        <Route exact path="/DeepCleaning">
+          <DeepCleaning />
+        </Route>
+        <Route exact path="/OfficeCleaning">
+          <OfficeCleaning />
+        </Route>
+        <Route exact path="/WallCleaning">
+          <Home />
         </Route>
       </Switch>
     </Router>
