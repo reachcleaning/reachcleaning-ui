@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
     verified_icon : {
-        fontSize: '3.5rem',
+        fontSize: '50px',
         color: 'dodgerblue'
     },
     icon_container : {
@@ -14,8 +14,8 @@ const useStyles = makeStyles(() => ({
     },
     message : {
         margin : '10px 0 0 10px',
-        fontSize: 'larger',
-        fontWeight: 500
+        fontSize: 'inherit',
+        fontWeight: 400
     }
 }));
 
@@ -27,9 +27,9 @@ const WhyChooseUs = () => {
     const classes = useStyles(); 
     scrollTop();
     return(
-        <div style={{margin: 'auto'}}>
+        <div style={{margin: 'auto', marginBottom: '30px'}}>
             <div className="row mb-5 mt-5">
-                <div className="col-md-12 text-center h1">
+                <div className="col-md-12 text-center h1" style={{fontSize: '30px', fontWeight: '450'}}>
                     {CONSTANT.WHY_CHOOSE_US}
                 </div>
             </div>
@@ -86,7 +86,7 @@ const WhyChooseUs = () => {
             <div className="row">
                 <div className="col-md-12 text-center mb-5">
                     <span>{CONSTANT.WHY_NOT_CONTACT_US}</span>
-                    <Link to={"mailto:" +CONSTANT.RC_MAIL}>{CONSTANT.RC_MAIL}</Link>
+                    <Link>{CONSTANT.COMPANY_PHONE_NO}</Link>
                 </div>
             </div>
         </div>

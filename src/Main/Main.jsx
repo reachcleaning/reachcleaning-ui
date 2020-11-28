@@ -30,13 +30,13 @@ const useStyles = makeStyles(() => ({
         flex: 1,
     },
     post_title: {
-        fontSize: '40px',
-        fontWeight: 700,
+        fontSize: '28px',
+        fontWeight: 400,
         lineHeight: 1.65,
         textAlign: "center"
     },
     message: {
-        fontWeight: 330,
+        fontWeight: 300,
         textAlign: 'justify'
     },
     images_container : {
@@ -46,7 +46,6 @@ const useStyles = makeStyles(() => ({
         overflowX: 'auto',
         overflowY: 'hidden',
         justifyContent: 'center',
-        flexWrap: 'wrap'
     },
     service_cards_height: {
         height: "280px",
@@ -65,12 +64,13 @@ const useStyles = makeStyles(() => ({
         margin: '0 20px',
         paddingBottom: '20px',
         textAlign: 'center',
+        width: '22%',
         "& div": {
-            fontWeight: 'bold'
+            fontSize: '18px'
         },
         "& a": {
             fontWeight: '400',
-            fontSize: '15px'
+            fontSize: '12px'
         }
     }
 }));
@@ -153,7 +153,7 @@ const Services = () => {
                         <img className={classes.service_cards_height} src={WallCleaning} alt="WallCleaning"/>
                         <div>
                             <div>{WALL_SERVICE_TITLE}</div>
-                            <Link to="/ClinicalCleaning">{CLICK_HERE}</Link>
+                            <Link to="/WallCleaning">{CLICK_HERE}</Link>
                         </div>
                     </div>
                 </div>
@@ -201,7 +201,7 @@ export const QualityOfService = () => {
 }
 
 const Main = () => {
-    return (<div>
+    return (<div style={{marginBottom: "70px"}}>
         <WelcomeInfo/>
         <Services />
         <WhyChooseUs/>

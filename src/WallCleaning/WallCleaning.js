@@ -1,9 +1,7 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import OfficeCleaning_1 from '../Assests/img/OfficeCleaning_1.jpg';
-import OfficeCleaning_2 from '../Assests/img/OfficeCleaning_2.jpg';
-import OfficeCleaning_3 from '../Assests/img/OfficeCleaning_3.jpg';
-import OfficeCleaning_4 from '../Assests/img/OfficeCleaning_4.jpg';
+import WallCleaning_1 from '../Assests/img/WallCleaning_1.jpg';
+import WallCleaning_2 from '../Assests/img/WallCleaning.jpg';
 import { makeStyles } from '@material-ui/core/styles';
 import * as CONSTANT from '../constants/CONSTANT';
 import WhyChooseUs from '../WhyChooseUs/WhyChooseUs';
@@ -38,45 +36,28 @@ const scrollTop = () =>{
     window.scrollTo({top: 0, behavior: 'smooth'});
 };
 
-const OfficeCleaning = () => {
+const WallCleaning = () => {
     const classes = useStyles();
     scrollTop();
     return (
         <div className={classes.container}>
-            <div className={classes.post_title}>{CONSTANT.OFFICE_CLEANING}</div>
-            <div className={classes.message}>{CONSTANT.OFFICE_CLEANING_MESSAGE}</div>
+            <div className={classes.post_title}>{CONSTANT.WALL_SERVICE_TITLE}</div>
+            <div className={classes.message}>{CONSTANT.WALL_SERVICE_MESSAGE}</div>
             <Carousel className={classes.slider_container}>
                 <Carousel.Item interval={100}>
                     <img
                     className="rounded mx-auto d-block"
-                    src={OfficeCleaning_1}
+                    src={WallCleaning_1}
                     alt="First slide"
                     height="400"
-
                     />
                 </Carousel.Item>
                 <Carousel.Item interval={100}>
                     <img
                     className="rounded mx-auto d-block"
-                    src={OfficeCleaning_2}
+                    src={WallCleaning_2}
                     alt="Third slide"
                     height="400"
-                    />
-                </Carousel.Item>
-                <Carousel.Item interval={100}>
-                    <img
-                    className="rounded mx-auto d-block"
-                    height="400"
-                    src={OfficeCleaning_3}
-                    alt="Third slide"
-                    />
-                </Carousel.Item>
-                <Carousel.Item interval={100}>
-                    <img
-                    className="rounded mx-auto d-block"
-                    height="400"
-                    src={OfficeCleaning_4}
-                    alt="Third slide"
                     />
                 </Carousel.Item>
             </Carousel>
@@ -85,4 +66,4 @@ const OfficeCleaning = () => {
     );
 }
 
-export default OfficeCleaning;
+export default WallCleaning;

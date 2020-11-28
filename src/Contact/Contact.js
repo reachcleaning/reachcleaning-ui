@@ -102,7 +102,7 @@ export default () => {
     return (
         <React.Fragment>
             <div className="mt-5">
-                <div className="m-5 row">
+                <div className="mt-5 ml-5 mr-5 row">
                     <Jumbotron className="col-md-7 col-sm-12">
                         { ErrorMessage && 
                             <Alert variant="danger" onClose={() => setErrorMessage(false)} dismissible>

@@ -4,9 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
     message : {
-        margin : '10px 0 0 10px',
-        padding: '0 0 0 10px',
-        fontWeight: 400,
+        margin : '10px 0 0 0',
+        fontWeight: 300,
         textAlign: 'justify'
     },
     heading: {
@@ -21,12 +20,12 @@ const scrollTop = () =>{
 const PrivacyPolicy = () => {
     const classes = useStyles();
     scrollTop();
-    
+
     return(
-        <div style={{margin: '20px'}}>
+        <div className="m-5">
             <div style={{margin: 'auto', paddingBottom: '40px'}}>
                 <div className="mb-5 mt-5">
-                    <div className="col-md-12 text-center h1">
+                    <div className="col-md-12 text-center h1" style={{fontSize: '30px', fontWeight: 450}}>
                         {CONSTANT.PRIVACY_POLICY}
                     </div>
                 </div>

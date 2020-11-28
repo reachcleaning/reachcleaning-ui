@@ -11,6 +11,7 @@ import Contact from './Contact/Contact';
 import ClinicalCleaning from './ClinicalCleaning/ClinicalCleaning';
 import DeepCleaning from './DeepCleaning/DeepCleaning';
 import OfficeCleaning from './OfficeCleaning/OfficeCleaning';
+import WallCleaning from './WallCleaning/WallCleaning';
 import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy';
 
 function App() {
@@ -34,7 +35,7 @@ function App() {
           <OfficeCleaning />
         </Route>
         <Route exact path="/WallCleaning">
-          <Home />
+          <WallCleaning />
         </Route>
         <Route exact path="/PrivacyPolicy">
           <PrivacyPolicy />

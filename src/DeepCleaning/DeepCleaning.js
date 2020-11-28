@@ -14,8 +14,8 @@ const useStyles = makeStyles(() => ({
         background: 'grey'
     },
     post_title: {
-        fontSize: '40px',
-        fontWeight: 700,
+        fontSize: '28px',
+        fontWeight: 400,
         lineHeight: 1.65,
         textAlign: "center"
     },
@@ -40,21 +40,12 @@ const scrollTop = () =>{
 const DeepCleaning = () => {
     const classes = useStyles();
     scrollTop();
-    
+
     return (
         <div className={classes.container}>
             <div className={classes.post_title}>{CONSTANT.DEEP_CLEANING}</div>
             <div className={classes.message}>{CONSTANT.DEEP_CLEANING_MESSAGE}</div>
             <Carousel className={classes.slider_container}>
-                <Carousel.Item interval={100}>
-                    <img
-                    className="rounded mx-auto d-block"
-                    src={DeepCleaning_1}
-                    alt="First slide"
-                    height="400"
-
-                    />
-                </Carousel.Item>
                 <Carousel.Item interval={100}>
                     <img
                     className="rounded mx-auto d-block"
@@ -69,6 +60,14 @@ const DeepCleaning = () => {
                     height="400"
                     src={DeepCleaning_3}
                     alt="Third slide"
+                    />
+                </Carousel.Item>
+                <Carousel.Item interval={100}>
+                    <img
+                    className="rounded mx-auto d-block"
+                    src={DeepCleaning_1}
+                    alt="First slide"
+                    height="400"
                     />
                 </Carousel.Item>
             </Carousel>

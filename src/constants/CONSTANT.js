@@ -27,6 +27,9 @@ cleaning, office cleaning, deep cleaning, periodic cleaning, and
 inner wall cleaning services. RCS will provide services that are not only flexible
 and affordable, but that are also to a very high standard that would meet your
 business cleaning needs. `;
+export const WALL_SERVICE_MESSAGE = `To give your wall a fresh look without a paint brush. We will be able to provide this service
+to you at a quality similar to a paint brush but at the fraction of the cost.`;
+
 export const CLINICAL_SERVICE_TITLE = `Clinical Cleaning Services`;
 export const PERIODIC_SERVICE_TITLE = `Office Cleaning Services`;
 export const DEEP_SERVICE_TITLE = `Deep Cleaning Services`;
@@ -40,6 +43,7 @@ export const EMAIL = "Email";
 export const MESSAGE = "Message";
 export const SUBMIT = "Submit";
 export const PHONENO = "Phone No";
+export const COMPANY_PHONE_NO = "03300430142";
 export const CONTACT_US_TODAY = "Contact Our Team Today!";
 export const CONTACT_US_MESSAGE = "Contact Us ";
 

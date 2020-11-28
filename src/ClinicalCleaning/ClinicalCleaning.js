@@ -16,8 +16,8 @@ const useStyles = makeStyles(() => ({
         background: 'grey'
     },
     post_title: {
-        fontSize: '40px',
-        fontWeight: 700,
+        fontSize: '28px',
+        fontWeight: 400,
         lineHeight: 1.65,
         textAlign: "center"
     },
@@ -42,7 +42,7 @@ const scrollTop = () =>{
 const ClinicalCleaning = () => {
     const classes = useStyles();
     scrollTop();
-    
+
     return (
         <div className={classes.container}>
             <div className={classes.post_title}>{CONSTANT.CLINICLE_CLEANING}</div>
