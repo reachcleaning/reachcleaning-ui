@@ -5,12 +5,12 @@ import DeepCleaning_2 from '../Assests/img/DeepCleaning_2.jpg';
 import DeepCleaning_3 from '../Assests/img/DeepCleaning_3.jpg';
 import { makeStyles } from '@material-ui/core/styles';
 import * as CONSTANT from '../constants/CONSTANT';
+import WhyChooseUs from '../WhyChooseUs/WhyChooseUs';
 
 const useStyles = makeStyles(() => ({
     slider_container : {
-        padding: '50px 0',
         margin: '20px auto',
-        width: 'inherit',
+        width: '713px',
         background: 'grey'
     },
     post_title: {
@@ -33,8 +33,14 @@ const useStyles = makeStyles(() => ({
     }
 }));
 
+const scrollTop = () =>{
+    window.scrollTo({top: 0, behavior: 'smooth'});
+};
+
 const DeepCleaning = () => {
     const classes = useStyles();
+    scrollTop();
+    
     return (
         <div className={classes.container}>
             <div className={classes.post_title}>{CONSTANT.DEEP_CLEANING}</div>
@@ -66,6 +72,7 @@ const DeepCleaning = () => {
                     />
                 </Carousel.Item>
             </Carousel>
+            <WhyChooseUs/>
         </div>
     );
 }

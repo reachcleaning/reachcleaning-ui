@@ -6,10 +6,12 @@ import {
 } from "react-router-dom";
 import Home from './Home/Home';
 import Header from './Header/Header';
+import Footer from './Footer/Footer';
 import Contact from './Contact/Contact';
 import ClinicalCleaning from './ClinicalCleaning/ClinicalCleaning';
 import DeepCleaning from './DeepCleaning/DeepCleaning';
 import OfficeCleaning from './OfficeCleaning/OfficeCleaning';
+import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy';
 
 function App() {
   return (
@@ -34,7 +36,11 @@ function App() {
         <Route exact path="/WallCleaning">
           <Home />
         </Route>
+        <Route exact path="/PrivacyPolicy">
+          <PrivacyPolicy />
+        </Route>
       </Switch>
+      <Footer/>
     </Router>
   );
 }

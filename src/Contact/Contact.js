@@ -9,8 +9,14 @@ import {FIRST_NAME, LAST_NAME, MIDDLE_NAME,
     CONTACT_US_TODAY
 } from '../constants/CONSTANT';
 import ReCAPTCHA from "react-google-recaptcha";
+import WhyChooseUs from '../WhyChooseUs/WhyChooseUs';
+
+const scrollTop = () =>{
+    window.scrollTo({top: 0, behavior: 'smooth'});
+};
 
 export default () => {
+    scrollTop();
 
     const [firstName, setFirstName] = useState('');
     const [middleName, setMiddleName] = useState('');
@@ -174,6 +180,9 @@ export default () => {
                             <h4 className="display-6">{CONTACT_US_TODAY}</h4>
                             <p>Phone No: 03300430142</p>
                     </Jumbotron>
+                    <div style={{ margin: 'auto' }}>
+                        <WhyChooseUs/>
+                    </div>
                 </div>
             </div>
         </React.Fragment>

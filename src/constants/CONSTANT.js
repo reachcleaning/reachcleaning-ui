@@ -123,3 +123,39 @@ amended as you request. Your assigned operational manager will ensure
 your requirements are understood and these will be translated into what you
 will see on a daily basis when you walk into your office.
 `;
+export const WHY_NOT_CONTACT_US = "So why not get in touch today to discuss your cleaning needs ";
+export const PRIVACY_POLICY = "Privacy Policy";
+export const TNC = "Terms & Conditions";
+export const PRIVACY_POLICY_MESSAGE = `This privacy policy sets out how we use and will protect any information that you
+give when you use this website. We are committed to ensuring that your privacy
+is protected. If we ask you to provide certain information by which you can be
+identified when using this website, you can be assured that it will only be used in
+accordance with this privacy statement. We may change this policy from time to
+time by updating this page. You should check this page from time to time to
+ensure that you are happy with any changes.`;
+export const WHAT_DO_WE_COLLECT_TITLE = `What do we collect?`;
+export const WHAT_DO_WE_COLLECT_MESSAGE = `If you make an enquiry on our website, we may collect the following information:
+your name, company name, email address, phone number, and a brief summary
+of your enquiry.`;
+export const COLLECTED_INFORMATION_TITLE = "What do we do with the information collected?";
+export const COLLECTED_INFORMATION_MESSAGE = `
+We require this information to understand your needs so that we can provide you
+with more information on the products/services which interest you. We may use
+this information to improve our products and services. We may also send you
+promotional emails from time to time about new products, services, special offers
+or other information in which you may be interested, using the email address
+which you have provided.`;
+export const WEBSITE_SECURITY_TITLE = "Website security";
+export const WEBSITE_SECURITY_MESSAGE = `
+We are committed to ensuring that your information is secure. In order to
+prevent any unauthorised access or disclosure, we have put in place suitable 
+physical, electronic and managerial procedures to safeguard and secure the
+information we collect online.`;
+export const ENQUIRY_FORMS_TITLE = "Enquiry forms";
+export const ENQUIRY_FORMS_MESSAGE = `
+Visitors can choose to contact us via the enquiry form(s) on our website. In order
+to prevent spam enquiries, we protect our forms with a ‘CAPTCHA’ challenge to
+ensure the submission is from a living person, rather than a computer bot. This
+CAPTCHA challenge creates a cookie that is used only to check the input response
+from the user is correct. The CAPTCHA cookie does not store any other
+information from your enquiry.`;

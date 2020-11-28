@@ -5,7 +5,7 @@ import {
     SERVE_TITLE, SERVE_MESSAGE_P1, SERVE_MESSAGE_P2,
     SERVICE_TITLE, CLINICAL_SERVICE_TITLE,
     PERIODIC_SERVICE_TITLE, DEEP_SERVICE_TITLE, WALL_SERVICE_TITLE,
-    CONTACT_US_MESSAGE, RC_MAIL, SERVICE_MESSAGE, WHY_CHOOSE_US, SATISFACTION, SATISFACTION_MESSAGE,
+    SERVICE_MESSAGE, WHY_CHOOSE_US, SATISFACTION, SATISFACTION_MESSAGE,
     BESPOKE_SERVICES_TITLE, BESPOKE_SERVICES_MESSAGE, AVAILABLE_MANAGEMENT_MESSAGE, AVAILABLE_MANAGEMENT_TITLE, STAFF_MESSAGE,
     STAFF_TITLE, QUALITY_OF_SERVICE, RESPONSE_TIME_TITLE, RESPONSE_TIME_MESSAGE, FLEXIBILITY, FLEXIBILITY_MESSAGE, 
     INDIVIDUAL_SERIVCE_TITLE, COMPETITIVE_TITLE, COMPETITIVE_MESSAGE, INDIVIDUAL_SERIVCE_MESSAGE, CLICK_HERE
@@ -75,7 +75,6 @@ const useStyles = makeStyles(() => ({
     }
 }));
 
-
 const WelcomeInfo = () => {
     const classes = useStyles();
 
@@ -83,7 +82,9 @@ const WelcomeInfo = () => {
         <div className={classes.post_container}>
             <div className={classes.post_content}>
                 <div className={classes.post_title}>{WELCOME}</div>
-                <div className={classes.message}>{WELCOME_MESSAGE}</div>
+                <div className={classes.message}>
+                    <div className="text-center">{WELCOME_MESSAGE}</div>
+                </div>
             </div>
         </div>
     );
@@ -207,10 +208,6 @@ const Main = () => {
         <QualityOfService/>
         <AboutUs />
         <Serve />
-        <p>
-            <i>{CONTACT_US_MESSAGE}</i>
-            <a href={"mailto:" + RC_MAIL}>{RC_MAIL}</a>
-        </p>
     </div>)
 }
 
