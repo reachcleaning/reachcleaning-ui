@@ -1,7 +1,5 @@
 import React from 'react';
-import Carousel from 'react-bootstrap/Carousel';
-import WallCleaning_1 from '../Assests/img/WallCleaning_1.jpg';
-import WallCleaning_2 from '../Assests/img/WallCleaning.jpg';
+import WallCleaning_1 from '../Assests/img/Website/Wall cleaning.jpg';
 import { makeStyles } from '@material-ui/core/styles';
 import * as CONSTANT from '../constants/CONSTANT';
 import WhyChooseUs from '../WhyChooseUs/WhyChooseUs';
@@ -13,13 +11,15 @@ const useStyles = makeStyles(() => ({
         background: 'grey'
     },
     post_title: {
-        fontSize: '28px',
-        fontWeight: 400,
+        fontSize: '25px',
+        fontWeight: 500,
         lineHeight: 1.65,
+        marginBottom: '20px',
+        color: '#3E762A',
         textAlign: "center"
     },
     message: {
-        fontWeight: 330,
+        fontWeight: 450,
         textAlign: 'justify'
     },
     container: {
@@ -41,26 +41,9 @@ const WallCleaning = () => {
     scrollTop();
     return (
         <div className={classes.container}>
-            <div className={classes.post_title}>{CONSTANT.WALL_SERVICE_TITLE}</div>
+            <div className={classes.post_title}>{CONSTANT.WALL_CLEANING}</div>
             <div className={classes.message}>{CONSTANT.WALL_SERVICE_MESSAGE}</div>
-            <Carousel className={classes.slider_container}>
-                <Carousel.Item interval={100}>
-                    <img
-                    className="rounded mx-auto d-block"
-                    src={WallCleaning_1}
-                    alt="First slide"
-                    height="400"
-                    />
-                </Carousel.Item>
-                <Carousel.Item interval={100}>
-                    <img
-                    className="rounded mx-auto d-block"
-                    src={WallCleaning_2}
-                    alt="Third slide"
-                    height="400"
-                    />
-                </Carousel.Item>
-            </Carousel>
+            <img className="content_img" src={WallCleaning_1} alt={WallCleaning_1} />
             <WhyChooseUs/>
         </div>
     );

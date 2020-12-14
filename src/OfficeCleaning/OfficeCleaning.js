@@ -1,9 +1,6 @@
 import React from 'react';
-import Carousel from 'react-bootstrap/Carousel';
-import OfficeCleaning_1 from '../Assests/img/OfficeCleaning_1.jpg';
-import OfficeCleaning_2 from '../Assests/img/OfficeCleaning_2.jpg';
-import OfficeCleaning_3 from '../Assests/img/OfficeCleaning_3.jpg';
-import OfficeCleaning_4 from '../Assests/img/OfficeCleaning_4.jpg';
+import OfficeCleaning_1 from '../Assests/img/Website/Office Cleaning  Pic 1.jpg';
+import OfficeCleaning_2 from '../Assests/img/Website/Office Cleaning  Pic 2.jpg';
 import { makeStyles } from '@material-ui/core/styles';
 import * as CONSTANT from '../constants/CONSTANT';
 import WhyChooseUs from '../WhyChooseUs/WhyChooseUs';
@@ -15,13 +12,14 @@ const useStyles = makeStyles(() => ({
         background: 'grey'
     },
     post_title: {
-        fontSize: '28px',
-        fontWeight: 400,
+        fontSize: '25px',
+        fontWeight: 500,
         lineHeight: 1.65,
+        color: '#3E762A',
         textAlign: "center"
     },
     message: {
-        fontWeight: 330,
+        fontWeight: 450,
         textAlign: 'justify'
     },
     container: {
@@ -44,42 +42,9 @@ const OfficeCleaning = () => {
     return (
         <div className={classes.container}>
             <div className={classes.post_title}>{CONSTANT.OFFICE_CLEANING}</div>
+            <img className="content_img" src={OfficeCleaning_1} alt={OfficeCleaning_1} />
             <div className={classes.message}>{CONSTANT.OFFICE_CLEANING_MESSAGE}</div>
-            <Carousel className={classes.slider_container}>
-                <Carousel.Item interval={100}>
-                    <img
-                    className="rounded mx-auto d-block"
-                    src={OfficeCleaning_1}
-                    alt="First slide"
-                    height="400"
-
-                    />
-                </Carousel.Item>
-                <Carousel.Item interval={100}>
-                    <img
-                    className="rounded mx-auto d-block"
-                    src={OfficeCleaning_2}
-                    alt="Third slide"
-                    height="400"
-                    />
-                </Carousel.Item>
-                <Carousel.Item interval={100}>
-                    <img
-                    className="rounded mx-auto d-block"
-                    height="400"
-                    src={OfficeCleaning_3}
-                    alt="Third slide"
-                    />
-                </Carousel.Item>
-                <Carousel.Item interval={100}>
-                    <img
-                    className="rounded mx-auto d-block"
-                    height="400"
-                    src={OfficeCleaning_4}
-                    alt="Third slide"
-                    />
-                </Carousel.Item>
-            </Carousel>
+            <img className="content_img" src={OfficeCleaning_2} alt={OfficeCleaning_2} />
             <WhyChooseUs/>
         </div>
     );

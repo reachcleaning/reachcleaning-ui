@@ -13,6 +13,10 @@ import DeepCleaning from './DeepCleaning/DeepCleaning';
 import OfficeCleaning from './OfficeCleaning/OfficeCleaning';
 import WallCleaning from './WallCleaning/WallCleaning';
 import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy';
+import AboutUs from './AboutUs/AboutUs';
+import WhyChooseUsScreen from './WhyChooseUsScreen/WhyChooseUsScreen';
+import QualityOfServices from './QualityOfServices/QualityOfServices';
+import OurServices from './OurServices/OurServices';
 
 function App() {
   return (
@@ -39,6 +43,18 @@ function App() {
         </Route>
         <Route exact path="/PrivacyPolicy">
           <PrivacyPolicy />
+        </Route>
+        <Route exact path="/aboutus">
+          <AboutUs />
+        </Route>
+        <Route exact path="/whychooseus">
+          <WhyChooseUsScreen />
+        </Route>
+        <Route exact path="/qualityofservices">
+          <QualityOfServices />
+        </Route>
+        <Route exact path="/services">
+          <OurServices />
         </Route>
       </Switch>
       <Footer/>

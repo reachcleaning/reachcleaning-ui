@@ -2,7 +2,6 @@ import React from 'react';
 import * as CONSTANT from '../constants/CONSTANT';
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 import { makeStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
     verified_icon : {
@@ -29,7 +28,7 @@ const WhyChooseUs = () => {
     return(
         <div style={{margin: 'auto', marginBottom: '30px'}}>
             <div className="row mb-5 mt-5">
-                <div className="col-md-12 text-center h1" style={{fontSize: '30px', fontWeight: '450'}}>
+                <div className="col-md-12 text-center h1" style={{fontSize: '30px', fontWeight: '500', color: '#3E762A'}}>
                     {CONSTANT.WHY_CHOOSE_US}
                 </div>
             </div>
@@ -83,10 +82,10 @@ const WhyChooseUs = () => {
                     </div>
                 </div>
             </div>
-            <div className="row">
-                <div className="col-md-12 text-center mb-5">
+            <div className="row mb-4">
+                <div className="col-md-12 text-center mb-5" style={{color: '#3E762A'}}>
                     <span>{CONSTANT.WHY_NOT_CONTACT_US}</span>
-                    <Link>{CONSTANT.COMPANY_PHONE_NO}</Link>
+                    <a style={{textDecoration: 'underline', color: '#3E762A'}} href={`tel:${CONSTANT.COMPANY_PHONE_NO}`}>{CONSTANT.COMPANY_PHONE_NO}</a>
                 </div>
             </div>
         </div>

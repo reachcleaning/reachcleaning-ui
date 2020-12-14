@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
     message : {
         margin : '10px 0 0 0',
-        fontWeight: 300,
+        fontWeight: 350,
         textAlign: 'justify'
     },
     heading: {
@@ -23,9 +23,9 @@ const PrivacyPolicy = () => {
 
     return(
         <div className="m-5">
-            <div style={{margin: 'auto', paddingBottom: '40px'}}>
+            <div style={{margin: 'auto', paddingBottom: '50px'}}>
                 <div className="mb-5 mt-5">
-                    <div className="col-md-12 text-center h1" style={{fontSize: '30px', fontWeight: 450}}>
+                    <div className="col-md-12 text-center h1" style={{color: '#3E762A', fontSize: '25px', fontWeight: 550}}>
                         {CONSTANT.PRIVACY_POLICY}
                     </div>
                 </div>

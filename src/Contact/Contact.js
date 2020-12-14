@@ -19,7 +19,6 @@ export default () => {
     scrollTop();
 
     const [firstName, setFirstName] = useState('');
-    const [middleName, setMiddleName] = useState('');
     const [lastName, setLastName] = useState('');
     const [Email, setEmail] = useState('');
     const [Message, setMessage] = useState('');
@@ -34,7 +33,7 @@ export default () => {
         setSuccessMessage('');
         setErrorMessage('');
 
-        const Name = middleName ? firstName + " " + lastName : firstName + " " + middleName + " " + lastName;
+        const Name = firstName + " " + lastName;
         
         if(!firstName || !lastName ) {
             setErrorMessage('First Name and Last Name are Required');
@@ -44,12 +43,6 @@ export default () => {
 
         if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(Email)) {
             setErrorMessage('Invalid Email Address');
-            setSuccessMessage('');
-            return;
-        }
-
-        if(!PhoneNo) {
-            setErrorMessage('Phone No is Required');
             setSuccessMessage('');
             return;
         }
@@ -86,7 +79,6 @@ export default () => {
             setEmail('');
             setMessage('');
             setLastName('');
-            setMiddleName('');
             setPhoneNo("");
             setCaptcha(null);
         })
@@ -116,7 +108,7 @@ export default () => {
                         }
                         <Form>
                             <Form.Row>
-                                <Form.Group controlId="formFirstName" className="col-md-4">
+                                <Form.Group controlId="formFirstName" className="col-md-6">
                                     <Form.Label className="required">{FIRST_NAME}</Form.Label>
                                     <Form.Control type="text" placeholder="Enter First Name" value={firstName} onChange={e => {
                                             e.persist();
@@ -124,16 +116,9 @@ export default () => {
                                         }
                                     }/>
                                 </Form.Group>
-                                <Form.Group controlId="formMiddleName" className="col-md-4">
-                                    <Form.Label>{MIDDLE_NAME}</Form.Label>
-                                    <Form.Control type="text" placeholder="Enter Middle Name" value={middleName} onChange={e => {
-                                            e.persist();
-                                            setMiddleName(e.target.value);
-                                        }
-                                    }/>
-                                </Form.Group>
-                                <Form.Group controlId="formLastName" className="col-md-4">
-                                    <Form.Label className="required">{LAST_NAME}</Form.Label>
+                                
+                                <Form.Group controlId="formLastName" className="col-md-6">
+                                    <Form.Label>{LAST_NAME}</Form.Label>
                                     <Form.Control type="text" placeholder="Enter Last Name" value={lastName} onChange={e => {
                                             e.persist();
                                             setLastName(e.target.value);
@@ -151,7 +136,7 @@ export default () => {
                                     }/>
                                 </Form.Group>
                                 <Form.Group className="col-md-6" controlId="formPhoneNo">
-                                    <Form.Label className="required">{PHONENO}</Form.Label>
+                                    <Form.Label>{PHONENO}</Form.Label>
                                     <Form.Control type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" value={PhoneNo} placeholder="+44-7911-123456" onChange={e => {
                                             e.persist();
                                             setPhoneNo(e.target.value);

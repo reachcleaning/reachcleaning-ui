@@ -22,6 +22,10 @@ label.required:after {
 }
 
 h3 {
-  font-weight: 350!important;
   font-size: 21px!important;
+}
+
+.content_img {
+  margin: 50px 0;
+  width: 100%;
 }
