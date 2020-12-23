@@ -35,8 +35,8 @@ export default () => {
 
         const Name = firstName + " " + lastName;
         
-        if(!firstName || !lastName ) {
-            setErrorMessage('First Name and Last Name are Required');
+        if(!firstName) {
+            setErrorMessage('First Name is Required');
             setSuccessMessage('');
             return;
         }

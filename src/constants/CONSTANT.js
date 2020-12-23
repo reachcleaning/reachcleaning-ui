@@ -136,17 +136,19 @@ will see on a daily basis when you walk into your office.
 export const WHY_NOT_CONTACT_US = "Please get in touch today to discuss your cleaning needs ";
 export const PRIVACY_POLICY = "Privacy Policy";
 export const TNC = "Terms & Conditions";
-export const PRIVACY_POLICY_MESSAGE = `This privacy policy sets out how we use and will protect any information that you
-give when you use this website. We are committed to ensuring that your privacy
-is protected. If we ask you to provide certain information by which you can be
-identified when using this website, you can be assured that it will only be used in
-accordance with this privacy statement. We may change this policy from time to
-time by updating this page. You should check this page from time to time to
-ensure that you are happy with any changes.`;
+export const PRIVACY_POLICY_MESSAGE = `This privacy policy will explain how RCS uses the personal data we collect from you when you use our website.`;
 export const WHAT_DO_WE_COLLECT_TITLE = `What do we collect?`;
-export const WHAT_DO_WE_COLLECT_MESSAGE = `If you make an enquiry on our website, we may collect the following information:
-your name, company name, email address, phone number, and a brief summary
-of your enquiry.`;
+export const WHAT_DO_WE_COLLECT_MESSAGE = `RCS collects the following data:`;
+export const WHAT_DO_WE_COLLECT_LIST = `Personal identification information (Name, email address, and phone number)`;
+export const HOW_DO_WE_COLLECT_DATA_TITLE = `How do we collect your data?`;
+export const HOW_DO_WE_COLLECT_DATA_MESSAGE = `You directly provide RCS with most of the data we collect. We collect data and process data when you:`;
+export const HOW_DO_WE_COLLECT_DATA_LIST = `Voluntarily complete the Contact me page of RCS website`;
+export const HOW_WE_WILL_USE_TITLE = `How will we use your data?`;
+export const HOW_WE_WILL_USE_MESSAGE = `RCS collects your data so that we can:`;
+export const HOW_WE_WILL_USE_LIST = `Respond to your message on your cleaning requirement`;
+export const HOW_WE_WILL_STORE_TITLE = `How do we store your data?`;
+export const HOW_WE_WILL_STORE_MESSAGE_1 = `RCS store your data for three months on our Google Workspace. The data is only accessible to RCS two directors and its operational managers. Access to the Workspace has to be approved by the directors and it is protected by password. RCS securely stores your data at Google Workspace.`;
+export const HOW_WE_WILL_STORE_MESSAGE_2 = `RCS will keep your Name, email address, and phone number for three months. Once this time period has expired, we will delete your data by deleting from Google Workspace.`;
 export const COLLECTED_INFORMATION_TITLE = "What do we do with the information collected?";
 export const COLLECTED_INFORMATION_MESSAGE = `
 We require this information to understand your needs so that we can provide you

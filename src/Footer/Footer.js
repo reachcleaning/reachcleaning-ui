@@ -1,7 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
-import { RC_MAIL, CONTACT_US_MESSAGE, PRIVACY_POLICY, TNC } from '../constants/CONSTANT';
+import { RC_MAIL, CONTACT_US_MESSAGE, PRIVACY_POLICY } from '../constants/CONSTANT';
+import Menu from '../Menu/Menu';
 
 const useStyles = makeStyles(() => ({
     footer: {
@@ -21,11 +22,14 @@ const Footer = () => {
             <div className="col-md-7 mt-2">
                 <Link to="/PrivacyPolicy" style={{padding: '5px 10px'}}>{PRIVACY_POLICY}</Link>
             </div>
-            <div className="col-md-5 mt-2">
-                <p className="float-right">
+            <div className="col-md-4 mt-2">
+                <p className="float-left">
                     <i>{CONTACT_US_MESSAGE}</i>
                     <a href={"mailto:" + RC_MAIL}>{RC_MAIL}</a>
                 </p>
+            </div>
+            <div className="col-md-1">
+                <Menu />
             </div>
         </div>
     </div>);

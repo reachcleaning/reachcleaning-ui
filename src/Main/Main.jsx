@@ -95,7 +95,7 @@ const Serve = () => {
 }
 
 const Main = () => {
-    return (<div style={{marginBottom: "70px"}}>
+    return (<div style={{marginBottom: "120px"}}>
         <WelcomeInfo/>
         <Serve />
     </div>)
