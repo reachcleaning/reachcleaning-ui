@@ -19,16 +19,16 @@ const Footer = () => {
     return (
     <div className={classes.footer}>
         <div className="row m-0">
-            <div className="col-md-7 mt-2">
-                <Link to="/PrivacyPolicy" style={{padding: '5px 10px'}}>{PRIVACY_POLICY}</Link>
+            <div className="col-md-4 mt-2">
+                <Link to="/PrivacyPolicy" style={{padding: '5px 10px', color: 'white'}}>{PRIVACY_POLICY}</Link>
             </div>
             <div className="col-md-4 mt-2">
-                <p className="float-left">
-                    <i>{CONTACT_US_MESSAGE}</i>
-                    <a href={"mailto:" + RC_MAIL}>{RC_MAIL}</a>
+                <p style={{marginLeft: '10px'}}>
+                    <b style={{color: 'white'}}>{CONTACT_US_MESSAGE}</b>
+                    <a style={{color: 'white'}} href={"mailto:" + RC_MAIL}>{RC_MAIL}</a>
                 </p>
             </div>
-            <div className="col-md-1">
+            <div className="col-md-4">
                 <Menu />
             </div>
         </div>

@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import * as emailjs from 'emailjs-com';
-import {FIRST_NAME, LAST_NAME, MIDDLE_NAME,
+import {FIRST_NAME, LAST_NAME,
     EMAIL, MESSAGE, PHONENO, SUBMIT,
     CONTACT_US_TODAY
 } from '../constants/CONSTANT';
